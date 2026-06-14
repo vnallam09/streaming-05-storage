@@ -1,0 +1,5 @@
+session_id,datetime,user_id,activity,duration_min,distance_km,avg_hr,validation_errors
+SES-0013,2026-06-04T12:00:00Z,USR-099,run,40,7.50,160,Unknown user_id: 'USR-099'
+SES-0014,2026-06-04T13:00:00Z,USR-002,yoga,60,0.00,92,Invalid activity: 'yoga'
+SES-0015,2026-06-04T14:00:00Z,USR-003,run,0,0.00,0,Value must be at least 1: 0 | Value must be at least 1: 0
+SES-0016,2026-06-04T15:00:00Z,USR-004,row,not-a-number,5.00,140,Value must be an integer: not-a-number

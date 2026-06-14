@@ -1,0 +1,19 @@
+session_id,datetime,user_id,activity,duration_min,distance_km,avg_hr,device_type,note
+SES-0001,2026-06-01T06:15:00Z,USR-001,run,42,8.10,162,watch,Morning tempo run
+SES-0002,2026-06-01T07:02:00Z,USR-002,cycle,75,28.40,148,watch,Hill repeats
+SES-0003,2026-06-01T12:30:00Z,USR-003,walk,55,4.90,98,phone,Lunch walk
+SES-0004,2026-06-01T18:45:00Z,USR-004,swim,40,1.80,151,watch,Pool intervals
+SES-0005,2026-06-02T06:05:00Z,USR-005,row,30,6.20,139,watch,Steady state erg
+SES-0006,2026-06-02T06:40:00Z,USR-001,run,28,5.30,171,watch,Threshold session
+SES-0007,2026-06-02T19:10:00Z,USR-006,walk,65,5.40,104,phone,Evening stroll
+SES-0008,2026-06-03T05:55:00Z,USR-002,run,50,9.20,158,watch,Long easy run
+SES-0009,2026-06-03T17:25:00Z,USR-003,cycle,90,34.10,141,watch,Weekend ride
+SES-0010,2026-06-03T20:00:00Z,USR-004,run,35,7.00,178,watch,Track 400s
+SES-0011,2026-06-04T06:20:00Z,USR-005,swim,45,2.20,146,watch,Open water sim
+SES-0012,2026-06-04T07:15:00Z,USR-001,cycle,60,24.80,150,watch,Commute ride
+SES-0013,2026-06-04T12:00:00Z,USR-099,run,40,7.50,160,watch,Unknown athlete
+SES-0014,2026-06-04T13:00:00Z,USR-002,yoga,60,0.00,92,phone,Recovery flow
+SES-0015,2026-06-04T14:00:00Z,USR-003,run,0,0.00,0,watch,Aborted session
+SES-0016,2026-06-04T15:00:00Z,USR-004,row,not-a-number,5.00,140,watch,Bad duration value
+SES-0017,2026-06-05T06:10:00Z,USR-005,run,48,9.60,155,watch,Progression run
+SES-0018,2026-06-05T18:30:00Z,USR-006,cycle,40,14.20,128,watch,Easy spin

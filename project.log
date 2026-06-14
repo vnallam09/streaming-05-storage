@@ -425,3 +425,1340 @@
 2026-06-08 23:29:45 | INFO | C05 | ========================
 2026-06-08 23:29:45 | INFO | C05 | Consumer executed successfully!
 2026-06-08 23:29:45 | INFO | C05 | ========================
+2026-06-13 22:25:44 | DEBUG | P03 | No variables found in .env
+2026-06-13 22:25:44 | INFO | P03 | === RUN START ===
+2026-06-13 22:25:44 | INFO | P03 | project=P03
+2026-06-13 22:25:44 | INFO | P03 | repo_dir=streaming-05-storage
+2026-06-13 22:25:44 | INFO | P03 | python=3.14.5
+2026-06-13 22:25:44 | INFO | P03 | os=Linux 6.6.87.2-microsoft-standard-WSL2
+2026-06-13 22:25:44 | INFO | P03 | shell=bash
+2026-06-13 22:25:44 | INFO | P03 | cwd=.
+2026-06-13 22:25:44 | INFO | P03 | github_actions=False
+2026-06-13 22:25:44 | INFO | P03 | ========================
+2026-06-13 22:25:44 | INFO | P03 | START producer main()
+2026-06-13 22:25:44 | INFO | P03 | ========================
+2026-06-13 22:25:44 | INFO | P03 | ROOT_DIR = .
+2026-06-13 22:25:44 | INFO | P03 | DATA_DIR = data
+2026-06-13 22:25:44 | INFO | P03 | SALES_CSV = data/sales.csv
+2026-06-13 22:25:44 | INFO | P03 | REGIONS_CSV = data/regions.csv
+2026-06-13 22:25:44 | INFO | P03 | PRODUCTS_CSV = data/products.csv
+2026-06-13 22:25:44 | INFO | P03 | REJECTED_SALES_CSV = data/output/producer_rejected_sales.csv
+2026-06-13 22:25:44 | INFO | P03 | ========================
+2026-06-13 22:25:44 | INFO | P03 | SECTION A. Acquire
+2026-06-13 22:25:44 | INFO | P03 | ========================
+2026-06-13 22:25:44 | INFO | P03 | Loading settings from .env...
+2026-06-13 22:25:44 | INFO | P03 | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-13 22:25:44 | INFO | P03 | KAFKA_TOPIC                       = product-sales-case
+2026-06-13 22:25:44 | INFO | P03 | PRODUCER_MESSAGE_COUNT            = 6
+2026-06-13 22:25:44 | INFO | P03 | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2.0
+2026-06-13 22:25:44 | INFO | P03 | KAFKA_CLEAR_TOPIC_ON_START        = False
+2026-06-13 22:25:44 | INFO | P03 | Verifying Kafka connection...
+2026-06-13 22:25:44 | INFO | P03 | Kafka port is reachable.
+2026-06-13 22:25:45 | INFO | P03 | Loading validation reference data...
+2026-06-13 22:25:45 | INFO | P03 | Found 6 valid regions, 6 valid products.
+2026-06-13 22:25:45 | INFO | P03 | ========================
+2026-06-13 22:25:45 | INFO | P03 | SECTION P. Produce Messages
+2026-06-13 22:25:45 | INFO | P03 | ========================
+2026-06-13 22:25:45 | INFO | P03 | Initializing output...
+2026-06-13 22:25:45 | INFO | P03 | Output directory ready: output
+2026-06-13 22:25:45 | INFO | P03 | Sending messages...
+2026-06-13 22:25:45 | INFO | P03 | Sending up to 6 message(s) to topic 'product-sales-case'.
+2026-06-13 22:25:45 | INFO | P03 | Watch each sale arrive. Press CTRL+C to stop early.
+
+2026-06-13 22:25:45 | INFO | P03 | {
+  order_id: e7324981-a9f0-419f-b708-d0a333451fff
+  datetime: 2026-05-04T08:11:00Z
+  region_id: US-TX
+  currency_code: USD
+  product_id: PY-STREAM-005
+  unit_price: 59.99
+  quantity: 3
+  is_online: true
+  customer_id: CUST-4150
+  is_new_customer: false
+  device_type: tablet
+  payment_method: paypal
+  referral_source: paid_search
+  discount_code: 
+  customer_note: Gift for my team
+}
+2026-06-13 22:25:45 | INFO | P03 |   Sending message with key=US-TX
+2026-06-13 22:25:45 | INFO | P03 |   MESSAGE SENT  sent=1
+2026-06-13 22:25:47 | INFO | P03 | {
+  order_id: d61943e0-f543-4b5f-9c9a-18605ea4cfe5
+  datetime: 2026-05-04T08:23:00Z
+  region_id: US-TX
+  currency_code: USD
+  product_id: PY-DATA-002
+  unit_price: 49.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-1106
+  is_new_customer: false
+  device_type: mobile
+  payment_method: paypal
+  referral_source: paid_search
+  discount_code: 
+  customer_note: Gift for my team
+}
+2026-06-13 22:25:47 | INFO | P03 |   Sending message with key=US-TX
+2026-06-13 22:25:47 | INFO | P03 |   MESSAGE SENT  sent=2
+2026-06-13 22:25:49 | INFO | P03 | {
+  order_id: 14da1915-8e74-47be-9e10-f7275d31af46
+  datetime: 2026-05-04T08:28:00Z
+  region_id: CA-QC
+  currency_code: CAD
+  product_id: PY-NLP-006
+  unit_price: 54.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-2133
+  is_new_customer: false
+  device_type: desktop
+  payment_method: paypal
+  referral_source: organic
+  discount_code: 
+  customer_note: Learning at my own pace
+}
+2026-06-13 22:25:49 | INFO | P03 |   Sending message with key=CA-QC
+2026-06-13 22:25:49 | INFO | P03 |   MESSAGE SENT  sent=3
+2026-06-13 22:25:51 | INFO | P03 | {
+  order_id: d77ed935-9b28-431d-bc25-0a3fd98f4154
+  datetime: 2026-05-04T08:40:00Z
+  region_id: US-CA
+  currency_code: USD
+  product_id: PY-STREAM-005
+  unit_price: 59.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-5333
+  is_new_customer: false
+  device_type: mobile
+  payment_method: paypal
+  referral_source: organic
+  discount_code: 
+  customer_note: Highly recommend
+}
+2026-06-13 22:25:51 | INFO | P03 |   Sending message with key=US-CA
+2026-06-13 22:25:51 | INFO | P03 |   MESSAGE SENT  sent=4
+2026-06-13 22:25:53 | INFO | P03 | {
+  order_id: 24b91995-25f8-4ad7-8fa6-2e4c15750e5e
+  datetime: 2026-05-04T08:41:00Z
+  region_id: US-MO
+  currency_code: USD
+  product_id: PY-VIZ-003
+  unit_price: 39.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-8573
+  is_new_customer: false
+  device_type: mobile
+  payment_method: apple_pay
+  referral_source: paid_search
+  discount_code: 
+  customer_note: Learning at my own pace
+}
+2026-06-13 22:25:53 | INFO | P03 |   Sending message with key=US-MO
+2026-06-13 22:25:53 | INFO | P03 |   MESSAGE SENT  sent=5
+2026-06-13 22:25:55 | INFO | P03 | {
+  order_id: 1ec0fc8b-998c-4f43-8a66-19e1fa7d5fa8
+  datetime: 2026-05-04T08:54:00Z
+  region_id: CA-ON
+  currency_code: CAD
+  product_id: PY-SQL-004
+  unit_price: 44.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-8062
+  is_new_customer: false
+  device_type: tablet
+  payment_method: paypal
+  referral_source: organic
+  discount_code: 
+  customer_note: 
+}
+2026-06-13 22:25:55 | INFO | P03 |   Sending message with key=CA-ON
+2026-06-13 22:25:55 | INFO | P03 |   MESSAGE SENT  sent=6
+2026-06-13 22:25:58 | INFO | P03 | Checking for rejected records...
+2026-06-13 22:25:58 | INFO | P03 |   No records rejected.
+2026-06-13 22:25:58 | INFO | P03 | ========================
+2026-06-13 22:25:58 | INFO | P03 | SECTION E. Exit
+2026-06-13 22:25:58 | INFO | P03 | ========================
+2026-06-13 22:25:58 | INFO | P03 | Summary:
+2026-06-13 22:25:58 | INFO | P03 | Sent 6 message(s) to topic 'product-sales-case'.
+2026-06-13 22:25:58 | INFO | P03 | Rejected 0 message(s).
+2026-06-13 22:25:58 | INFO | P03 | ========================
+2026-06-13 22:25:58 | INFO | P03 | Producer executed successfully!
+2026-06-13 22:25:58 | INFO | P03 | ========================
+2026-06-13 22:28:05 | DEBUG | P03 | No variables found in .env
+2026-06-13 22:28:05 | INFO | P03 | === RUN START ===
+2026-06-13 22:28:05 | INFO | P03 | project=P03
+2026-06-13 22:28:05 | INFO | P03 | repo_dir=streaming-05-storage
+2026-06-13 22:28:05 | INFO | P03 | python=3.14.5
+2026-06-13 22:28:05 | INFO | P03 | os=Linux 6.6.87.2-microsoft-standard-WSL2
+2026-06-13 22:28:05 | INFO | P03 | shell=bash
+2026-06-13 22:28:05 | INFO | P03 | cwd=.
+2026-06-13 22:28:05 | INFO | P03 | github_actions=False
+2026-06-13 22:28:05 | INFO | P03 | ========================
+2026-06-13 22:28:05 | INFO | P03 | START producer main()
+2026-06-13 22:28:05 | INFO | P03 | ========================
+2026-06-13 22:28:05 | INFO | P03 | ROOT_DIR = .
+2026-06-13 22:28:05 | INFO | P03 | DATA_DIR = data
+2026-06-13 22:28:05 | INFO | P03 | SALES_CSV = data/sales.csv
+2026-06-13 22:28:05 | INFO | P03 | REGIONS_CSV = data/regions.csv
+2026-06-13 22:28:05 | INFO | P03 | PRODUCTS_CSV = data/products.csv
+2026-06-13 22:28:05 | INFO | P03 | REJECTED_SALES_CSV = data/output/producer_rejected_sales.csv
+2026-06-13 22:28:05 | INFO | P03 | ========================
+2026-06-13 22:28:05 | INFO | P03 | SECTION A. Acquire
+2026-06-13 22:28:05 | INFO | P03 | ========================
+2026-06-13 22:28:05 | INFO | P03 | Loading settings from .env...
+2026-06-13 22:28:05 | INFO | P03 | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-13 22:28:05 | INFO | P03 | KAFKA_TOPIC                       = product-sales-case
+2026-06-13 22:28:05 | INFO | P03 | PRODUCER_MESSAGE_COUNT            = 6
+2026-06-13 22:28:05 | INFO | P03 | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2.0
+2026-06-13 22:28:05 | INFO | P03 | KAFKA_CLEAR_TOPIC_ON_START        = False
+2026-06-13 22:28:05 | INFO | P03 | Verifying Kafka connection...
+2026-06-13 22:28:05 | INFO | P03 | Kafka port is reachable.
+2026-06-13 22:28:05 | INFO | P03 | Loading validation reference data...
+2026-06-13 22:28:05 | INFO | P03 | Found 6 valid regions, 6 valid products.
+2026-06-13 22:28:05 | INFO | P03 | ========================
+2026-06-13 22:28:05 | INFO | P03 | SECTION P. Produce Messages
+2026-06-13 22:28:05 | INFO | P03 | ========================
+2026-06-13 22:28:05 | INFO | P03 | Initializing output...
+2026-06-13 22:28:05 | INFO | P03 | Output directory ready: output
+2026-06-13 22:28:05 | INFO | P03 | Sending messages...
+2026-06-13 22:28:05 | INFO | P03 | Sending up to 6 message(s) to topic 'product-sales-case'.
+2026-06-13 22:28:05 | INFO | P03 | Watch each sale arrive. Press CTRL+C to stop early.
+
+2026-06-13 22:28:05 | INFO | P03 | {
+  order_id: e7324981-a9f0-419f-b708-d0a333451fff
+  datetime: 2026-05-04T08:11:00Z
+  region_id: US-TX
+  currency_code: USD
+  product_id: PY-STREAM-005
+  unit_price: 59.99
+  quantity: 3
+  is_online: true
+  customer_id: CUST-4150
+  is_new_customer: false
+  device_type: tablet
+  payment_method: paypal
+  referral_source: paid_search
+  discount_code: 
+  customer_note: Gift for my team
+}
+2026-06-13 22:28:05 | INFO | P03 |   Sending message with key=US-TX
+2026-06-13 22:28:05 | INFO | P03 |   MESSAGE SENT  sent=1
+2026-06-13 22:28:07 | INFO | P03 | {
+  order_id: d61943e0-f543-4b5f-9c9a-18605ea4cfe5
+  datetime: 2026-05-04T08:23:00Z
+  region_id: US-TX
+  currency_code: USD
+  product_id: PY-DATA-002
+  unit_price: 49.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-1106
+  is_new_customer: false
+  device_type: mobile
+  payment_method: paypal
+  referral_source: paid_search
+  discount_code: 
+  customer_note: Gift for my team
+}
+2026-06-13 22:28:07 | INFO | P03 |   Sending message with key=US-TX
+2026-06-13 22:28:07 | INFO | P03 |   MESSAGE SENT  sent=2
+2026-06-13 22:28:09 | INFO | P03 | {
+  order_id: 14da1915-8e74-47be-9e10-f7275d31af46
+  datetime: 2026-05-04T08:28:00Z
+  region_id: CA-QC
+  currency_code: CAD
+  product_id: PY-NLP-006
+  unit_price: 54.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-2133
+  is_new_customer: false
+  device_type: desktop
+  payment_method: paypal
+  referral_source: organic
+  discount_code: 
+  customer_note: Learning at my own pace
+}
+2026-06-13 22:28:09 | INFO | P03 |   Sending message with key=CA-QC
+2026-06-13 22:28:09 | INFO | P03 |   MESSAGE SENT  sent=3
+2026-06-13 22:28:11 | INFO | P03 | {
+  order_id: d77ed935-9b28-431d-bc25-0a3fd98f4154
+  datetime: 2026-05-04T08:40:00Z
+  region_id: US-CA
+  currency_code: USD
+  product_id: PY-STREAM-005
+  unit_price: 59.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-5333
+  is_new_customer: false
+  device_type: mobile
+  payment_method: paypal
+  referral_source: organic
+  discount_code: 
+  customer_note: Highly recommend
+}
+2026-06-13 22:28:11 | INFO | P03 |   Sending message with key=US-CA
+2026-06-13 22:28:11 | INFO | P03 |   MESSAGE SENT  sent=4
+2026-06-13 22:28:13 | INFO | P03 | {
+  order_id: 24b91995-25f8-4ad7-8fa6-2e4c15750e5e
+  datetime: 2026-05-04T08:41:00Z
+  region_id: US-MO
+  currency_code: USD
+  product_id: PY-VIZ-003
+  unit_price: 39.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-8573
+  is_new_customer: false
+  device_type: mobile
+  payment_method: apple_pay
+  referral_source: paid_search
+  discount_code: 
+  customer_note: Learning at my own pace
+}
+2026-06-13 22:28:13 | INFO | P03 |   Sending message with key=US-MO
+2026-06-13 22:28:13 | INFO | P03 |   MESSAGE SENT  sent=5
+2026-06-13 22:28:15 | INFO | P03 | {
+  order_id: 1ec0fc8b-998c-4f43-8a66-19e1fa7d5fa8
+  datetime: 2026-05-04T08:54:00Z
+  region_id: CA-ON
+  currency_code: CAD
+  product_id: PY-SQL-004
+  unit_price: 44.99
+  quantity: 1
+  is_online: true
+  customer_id: CUST-8062
+  is_new_customer: false
+  device_type: tablet
+  payment_method: paypal
+  referral_source: organic
+  discount_code: 
+  customer_note: 
+}
+2026-06-13 22:28:15 | INFO | P03 |   Sending message with key=CA-ON
+2026-06-13 22:28:15 | INFO | P03 |   MESSAGE SENT  sent=6
+2026-06-13 22:28:17 | INFO | P03 | Checking for rejected records...
+2026-06-13 22:28:17 | INFO | P03 |   No records rejected.
+2026-06-13 22:28:17 | INFO | P03 | ========================
+2026-06-13 22:28:17 | INFO | P03 | SECTION E. Exit
+2026-06-13 22:28:17 | INFO | P03 | ========================
+2026-06-13 22:28:17 | INFO | P03 | Summary:
+2026-06-13 22:28:17 | INFO | P03 | Sent 6 message(s) to topic 'product-sales-case'.
+2026-06-13 22:28:17 | INFO | P03 | Rejected 0 message(s).
+2026-06-13 22:28:17 | INFO | P03 | ========================
+2026-06-13 22:28:17 | INFO | P03 | Producer executed successfully!
+2026-06-13 22:28:17 | INFO | P03 | ========================
+2026-06-13 22:40:39 | DEBUG | C05-TEJA | No variables found in .env
+2026-06-13 22:41:00 | DEBUG | C05-TEJA | No variables found in .env
+2026-06-13 22:41:01 | DEBUG | C05 | No variables found in .env
+2026-06-13 22:41:01 | DEBUG | P03 | No variables found in .env
+2026-06-13 22:48:06 | DEBUG | C05 | No variables found in .env
+2026-06-13 22:48:06 | DEBUG | P03 | No variables found in .env
+2026-06-13 22:48:36 | DEBUG | C05 | No variables found in .env
+2026-06-13 22:48:36 | DEBUG | P03 | No variables found in .env
+2026-06-13 22:52:04 | DEBUG | P05-WORKOUTS | No variables found in .env
+2026-06-13 22:52:04 | DEBUG | C05-WORKOUTS | No variables found in .env
+2026-06-13 22:52:07 | DEBUG | C05 | No variables found in .env
+2026-06-13 22:52:07 | DEBUG | P03 | No variables found in .env
+2026-06-13 22:53:24 | DEBUG | C05 | No variables found in .env
+2026-06-13 22:53:24 | DEBUG | P03 | No variables found in .env
+2026-06-13 23:02:33 | DEBUG | P05-WORKOUTS | No variables found in .env
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | === RUN START ===
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | project=P05
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | repo_dir=streaming-05-storage
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | python=3.14.5
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | os=Linux 6.6.87.2-microsoft-standard-WSL2
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | shell=bash
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | cwd=.
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | github_actions=False
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | START workouts producer main()
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | ROOT_DIR = .
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | DATA_DIR = data
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | WORKOUTS_CSV = data/workouts.csv
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | USERS_CSV = data/workout_users.csv
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | REJECTED_WORKOUTS_CSV = data/output/producer_rejected_workouts.csv
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | SECTION A. Acquire
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Loading settings from .env...
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | KAFKA_TOPIC (workouts)            = streaming-05-storage-workouts
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | PRODUCER_MESSAGE_COUNT            = 20
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2.0
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | KAFKA_CLEAR_TOPIC_ON_START        = False
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Verifying Kafka connection...
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Kafka port is reachable.
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Loading validation reference data...
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Found 6 valid users.
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | SECTION P. Produce Messages
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Initializing output...
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Output directory ready: output
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Sending messages...
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Sending up to 20 message(s) to topic 'streaming-05-storage-workouts'.
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | Watch each session arrive. Press CTRL+C to stop early.
+
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS | {
+  session_id: SES-0001
+  datetime: 2026-06-01T06:15:00Z
+  user_id: USR-001
+  activity: run
+  duration_min: 42
+  distance_km: 8.10
+  avg_hr: 162
+  device_type: watch
+  note: Morning tempo run
+}
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS |   Sending message with key=USR-001
+2026-06-13 23:02:33 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=1
+2026-06-13 23:02:35 | INFO | P05-WORKOUTS | {
+  session_id: SES-0002
+  datetime: 2026-06-01T07:02:00Z
+  user_id: USR-002
+  activity: cycle
+  duration_min: 75
+  distance_km: 28.40
+  avg_hr: 148
+  device_type: watch
+  note: Hill repeats
+}
+2026-06-13 23:02:35 | INFO | P05-WORKOUTS |   Sending message with key=USR-002
+2026-06-13 23:02:35 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=2
+2026-06-13 23:02:37 | INFO | P05-WORKOUTS | {
+  session_id: SES-0003
+  datetime: 2026-06-01T12:30:00Z
+  user_id: USR-003
+  activity: walk
+  duration_min: 55
+  distance_km: 4.90
+  avg_hr: 98
+  device_type: phone
+  note: Lunch walk
+}
+2026-06-13 23:02:37 | INFO | P05-WORKOUTS |   Sending message with key=USR-003
+2026-06-13 23:02:37 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=3
+2026-06-13 23:02:39 | INFO | P05-WORKOUTS | {
+  session_id: SES-0004
+  datetime: 2026-06-01T18:45:00Z
+  user_id: USR-004
+  activity: swim
+  duration_min: 40
+  distance_km: 1.80
+  avg_hr: 151
+  device_type: watch
+  note: Pool intervals
+}
+2026-06-13 23:02:39 | INFO | P05-WORKOUTS |   Sending message with key=USR-004
+2026-06-13 23:02:39 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=4
+2026-06-13 23:02:41 | INFO | P05-WORKOUTS | {
+  session_id: SES-0005
+  datetime: 2026-06-02T06:05:00Z
+  user_id: USR-005
+  activity: row
+  duration_min: 30
+  distance_km: 6.20
+  avg_hr: 139
+  device_type: watch
+  note: Steady state erg
+}
+2026-06-13 23:02:41 | INFO | P05-WORKOUTS |   Sending message with key=USR-005
+2026-06-13 23:02:41 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=5
+2026-06-13 23:02:43 | INFO | P05-WORKOUTS | {
+  session_id: SES-0006
+  datetime: 2026-06-02T06:40:00Z
+  user_id: USR-001
+  activity: run
+  duration_min: 28
+  distance_km: 5.30
+  avg_hr: 171
+  device_type: watch
+  note: Threshold session
+}
+2026-06-13 23:02:43 | INFO | P05-WORKOUTS |   Sending message with key=USR-001
+2026-06-13 23:02:43 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=6
+2026-06-13 23:02:45 | INFO | P05-WORKOUTS | {
+  session_id: SES-0007
+  datetime: 2026-06-02T19:10:00Z
+  user_id: USR-006
+  activity: walk
+  duration_min: 65
+  distance_km: 5.40
+  avg_hr: 104
+  device_type: phone
+  note: Evening stroll
+}
+2026-06-13 23:02:45 | INFO | P05-WORKOUTS |   Sending message with key=USR-006
+2026-06-13 23:02:45 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=7
+2026-06-13 23:02:47 | INFO | P05-WORKOUTS | {
+  session_id: SES-0008
+  datetime: 2026-06-03T05:55:00Z
+  user_id: USR-002
+  activity: run
+  duration_min: 50
+  distance_km: 9.20
+  avg_hr: 158
+  device_type: watch
+  note: Long easy run
+}
+2026-06-13 23:02:47 | INFO | P05-WORKOUTS |   Sending message with key=USR-002
+2026-06-13 23:02:47 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=8
+2026-06-13 23:02:51 | INFO | P05-WORKOUTS | {
+  session_id: SES-0009
+  datetime: 2026-06-03T17:25:00Z
+  user_id: USR-003
+  activity: cycle
+  duration_min: 90
+  distance_km: 34.10
+  avg_hr: 141
+  device_type: watch
+  note: Weekend ride
+}
+2026-06-13 23:02:51 | INFO | P05-WORKOUTS |   Sending message with key=USR-003
+2026-06-13 23:02:51 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=9
+2026-06-13 23:02:53 | INFO | P05-WORKOUTS | {
+  session_id: SES-0010
+  datetime: 2026-06-03T20:00:00Z
+  user_id: USR-004
+  activity: run
+  duration_min: 35
+  distance_km: 7.00
+  avg_hr: 178
+  device_type: watch
+  note: Track 400s
+}
+2026-06-13 23:02:53 | INFO | P05-WORKOUTS |   Sending message with key=USR-004
+2026-06-13 23:02:53 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=10
+2026-06-13 23:02:55 | INFO | P05-WORKOUTS | {
+  session_id: SES-0011
+  datetime: 2026-06-04T06:20:00Z
+  user_id: USR-005
+  activity: swim
+  duration_min: 45
+  distance_km: 2.20
+  avg_hr: 146
+  device_type: watch
+  note: Open water sim
+}
+2026-06-13 23:02:55 | INFO | P05-WORKOUTS |   Sending message with key=USR-005
+2026-06-13 23:02:55 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=11
+2026-06-13 23:02:57 | INFO | P05-WORKOUTS | {
+  session_id: SES-0012
+  datetime: 2026-06-04T07:15:00Z
+  user_id: USR-001
+  activity: cycle
+  duration_min: 60
+  distance_km: 24.80
+  avg_hr: 150
+  device_type: watch
+  note: Commute ride
+}
+2026-06-13 23:02:57 | INFO | P05-WORKOUTS |   Sending message with key=USR-001
+2026-06-13 23:02:57 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=12
+2026-06-13 23:02:59 | INFO | P05-WORKOUTS | {
+  session_id: SES-0013
+  datetime: 2026-06-04T12:00:00Z
+  user_id: USR-099
+  activity: run
+  duration_min: 40
+  distance_km: 7.50
+  avg_hr: 160
+  device_type: watch
+  note: Unknown athlete
+}
+2026-06-13 23:02:59 | WARNING | P05-WORKOUTS | MESSAGE REJECTED
+2026-06-13 23:02:59 | WARNING | P05-WORKOUTS |   errors=["Unknown user_id: 'USR-099'"]
+2026-06-13 23:02:59 | ERROR | P05-WORKOUTS | dict contains fields not in fieldnames: 'note', 'device_type'
+2026-06-13 23:02:59 | ERROR | P05-WORKOUTS | Producer stopped before completing all messages.
+2026-06-13 23:07:02 | DEBUG | P05-WORKOUTS | No variables found in .env
+2026-06-13 23:07:09 | DEBUG | C05 | No variables found in .env
+2026-06-13 23:07:09 | DEBUG | P03 | No variables found in .env
+2026-06-13 23:07:50 | DEBUG | P05-WORKOUTS | No variables found in .env
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | === RUN START ===
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | project=P05
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | repo_dir=streaming-05-storage
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | python=3.14.5
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | os=Linux 6.6.87.2-microsoft-standard-WSL2
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | shell=bash
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | cwd=.
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | github_actions=False
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | START workouts producer main()
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | ROOT_DIR = .
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | DATA_DIR = data
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | WORKOUTS_CSV = data/workouts.csv
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | USERS_CSV = data/workout_users.csv
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | REJECTED_WORKOUTS_CSV = data/output/producer_rejected_workouts.csv
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | SECTION A. Acquire
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Loading settings from .env...
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | KAFKA_BOOTSTRAP_SERVERS           = localhost:9092
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | KAFKA_TOPIC (workouts)            = streaming-05-storage-workouts
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | PRODUCER_MESSAGE_COUNT            = 20
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | PRODUCER_MESSAGE_INTERVAL_SECONDS = 2.0
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | KAFKA_CLEAR_TOPIC_ON_START        = False
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Verifying Kafka connection...
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Kafka port is reachable.
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Loading validation reference data...
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Found 6 valid users.
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | SECTION P. Produce Messages
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Initializing output...
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Output directory ready: output
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Sending messages...
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Sending up to 20 message(s) to topic 'streaming-05-storage-workouts'.
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | Watch each session arrive. Press CTRL+C to stop early.
+
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS | {
+  session_id: SES-0001
+  datetime: 2026-06-01T06:15:00Z
+  user_id: USR-001
+  activity: run
+  duration_min: 42
+  distance_km: 8.10
+  avg_hr: 162
+  device_type: watch
+  note: Morning tempo run
+}
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS |   Sending message with key=USR-001
+2026-06-13 23:07:50 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=1
+2026-06-13 23:07:52 | INFO | P05-WORKOUTS | {
+  session_id: SES-0002
+  datetime: 2026-06-01T07:02:00Z
+  user_id: USR-002
+  activity: cycle
+  duration_min: 75
+  distance_km: 28.40
+  avg_hr: 148
+  device_type: watch
+  note: Hill repeats
+}
+2026-06-13 23:07:52 | INFO | P05-WORKOUTS |   Sending message with key=USR-002
+2026-06-13 23:07:52 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=2
+2026-06-13 23:07:54 | INFO | P05-WORKOUTS | {
+  session_id: SES-0003
+  datetime: 2026-06-01T12:30:00Z
+  user_id: USR-003
+  activity: walk
+  duration_min: 55
+  distance_km: 4.90
+  avg_hr: 98
+  device_type: phone
+  note: Lunch walk
+}
+2026-06-13 23:07:54 | INFO | P05-WORKOUTS |   Sending message with key=USR-003
+2026-06-13 23:07:54 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=3
+2026-06-13 23:07:56 | INFO | P05-WORKOUTS | {
+  session_id: SES-0004
+  datetime: 2026-06-01T18:45:00Z
+  user_id: USR-004
+  activity: swim
+  duration_min: 40
+  distance_km: 1.80
+  avg_hr: 151
+  device_type: watch
+  note: Pool intervals
+}
+2026-06-13 23:07:56 | INFO | P05-WORKOUTS |   Sending message with key=USR-004
+2026-06-13 23:07:56 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=4
+2026-06-13 23:07:58 | INFO | P05-WORKOUTS | {
+  session_id: SES-0005
+  datetime: 2026-06-02T06:05:00Z
+  user_id: USR-005
+  activity: row
+  duration_min: 30
+  distance_km: 6.20
+  avg_hr: 139
+  device_type: watch
+  note: Steady state erg
+}
+2026-06-13 23:07:58 | INFO | P05-WORKOUTS |   Sending message with key=USR-005
+2026-06-13 23:07:58 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=5
+2026-06-13 23:08:00 | INFO | P05-WORKOUTS | {
+  session_id: SES-0006
+  datetime: 2026-06-02T06:40:00Z
+  user_id: USR-001
+  activity: run
+  duration_min: 28
+  distance_km: 5.30
+  avg_hr: 171
+  device_type: watch
+  note: Threshold session
+}
+2026-06-13 23:08:00 | INFO | P05-WORKOUTS |   Sending message with key=USR-001
+2026-06-13 23:08:00 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=6
+2026-06-13 23:08:02 | INFO | P05-WORKOUTS | {
+  session_id: SES-0007
+  datetime: 2026-06-02T19:10:00Z
+  user_id: USR-006
+  activity: walk
+  duration_min: 65
+  distance_km: 5.40
+  avg_hr: 104
+  device_type: phone
+  note: Evening stroll
+}
+2026-06-13 23:08:02 | INFO | P05-WORKOUTS |   Sending message with key=USR-006
+2026-06-13 23:08:02 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=7
+2026-06-13 23:08:04 | INFO | P05-WORKOUTS | {
+  session_id: SES-0008
+  datetime: 2026-06-03T05:55:00Z
+  user_id: USR-002
+  activity: run
+  duration_min: 50
+  distance_km: 9.20
+  avg_hr: 158
+  device_type: watch
+  note: Long easy run
+}
+2026-06-13 23:08:04 | INFO | P05-WORKOUTS |   Sending message with key=USR-002
+2026-06-13 23:08:04 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=8
+2026-06-13 23:08:06 | INFO | P05-WORKOUTS | {
+  session_id: SES-0009
+  datetime: 2026-06-03T17:25:00Z
+  user_id: USR-003
+  activity: cycle
+  duration_min: 90
+  distance_km: 34.10
+  avg_hr: 141
+  device_type: watch
+  note: Weekend ride
+}
+2026-06-13 23:08:06 | INFO | P05-WORKOUTS |   Sending message with key=USR-003
+2026-06-13 23:08:06 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=9
+2026-06-13 23:08:08 | INFO | P05-WORKOUTS | {
+  session_id: SES-0010
+  datetime: 2026-06-03T20:00:00Z
+  user_id: USR-004
+  activity: run
+  duration_min: 35
+  distance_km: 7.00
+  avg_hr: 178
+  device_type: watch
+  note: Track 400s
+}
+2026-06-13 23:08:08 | INFO | P05-WORKOUTS |   Sending message with key=USR-004
+2026-06-13 23:08:08 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=10
+2026-06-13 23:08:10 | INFO | P05-WORKOUTS | {
+  session_id: SES-0011
+  datetime: 2026-06-04T06:20:00Z
+  user_id: USR-005
+  activity: swim
+  duration_min: 45
+  distance_km: 2.20
+  avg_hr: 146
+  device_type: watch
+  note: Open water sim
+}
+2026-06-13 23:08:10 | INFO | P05-WORKOUTS |   Sending message with key=USR-005
+2026-06-13 23:08:10 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=11
+2026-06-13 23:08:12 | INFO | P05-WORKOUTS | {
+  session_id: SES-0012
+  datetime: 2026-06-04T07:15:00Z
+  user_id: USR-001
+  activity: cycle
+  duration_min: 60
+  distance_km: 24.80
+  avg_hr: 150
+  device_type: watch
+  note: Commute ride
+}
+2026-06-13 23:08:12 | INFO | P05-WORKOUTS |   Sending message with key=USR-001
+2026-06-13 23:08:12 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=12
+2026-06-13 23:08:14 | INFO | P05-WORKOUTS | {
+  session_id: SES-0013
+  datetime: 2026-06-04T12:00:00Z
+  user_id: USR-099
+  activity: run
+  duration_min: 40
+  distance_km: 7.50
+  avg_hr: 160
+  device_type: watch
+  note: Unknown athlete
+}
+2026-06-13 23:08:14 | WARNING | P05-WORKOUTS | MESSAGE REJECTED
+2026-06-13 23:08:14 | WARNING | P05-WORKOUTS |   errors=["Unknown user_id: 'USR-099'"]
+2026-06-13 23:08:14 | INFO | P05-WORKOUTS | {
+  session_id: SES-0014
+  datetime: 2026-06-04T13:00:00Z
+  user_id: USR-002
+  activity: yoga
+  duration_min: 60
+  distance_km: 0.00
+  avg_hr: 92
+  device_type: phone
+  note: Recovery flow
+}
+2026-06-13 23:08:14 | WARNING | P05-WORKOUTS | MESSAGE REJECTED
+2026-06-13 23:08:14 | WARNING | P05-WORKOUTS |   errors=["Invalid activity: 'yoga'"]
+2026-06-13 23:08:14 | INFO | P05-WORKOUTS | {
+  session_id: SES-0015
+  datetime: 2026-06-04T14:00:00Z
+  user_id: USR-003
+  activity: run
+  duration_min: 0
+  distance_km: 0.00
+  avg_hr: 0
+  device_type: watch
+  note: Aborted session
+}
+2026-06-13 23:08:14 | WARNING | P05-WORKOUTS | MESSAGE REJECTED
+2026-06-13 23:08:14 | WARNING | P05-WORKOUTS |   errors=['Value must be at least 1: 0', 'Value must be at least 1: 0']
+2026-06-13 23:08:14 | INFO | P05-WORKOUTS | {
+  session_id: SES-0016
+  datetime: 2026-06-04T15:00:00Z
+  user_id: USR-004
+  activity: row
+  duration_min: not-a-number
+  distance_km: 5.00
+  avg_hr: 140
+  device_type: watch
+  note: Bad duration value
+}
+2026-06-13 23:08:14 | WARNING | P05-WORKOUTS | MESSAGE REJECTED
+2026-06-13 23:08:14 | WARNING | P05-WORKOUTS |   errors=['Value must be an integer: not-a-number']
+2026-06-13 23:08:14 | INFO | P05-WORKOUTS | {
+  session_id: SES-0017
+  datetime: 2026-06-05T06:10:00Z
+  user_id: USR-005
+  activity: run
+  duration_min: 48
+  distance_km: 9.60
+  avg_hr: 155
+  device_type: watch
+  note: Progression run
+}
+2026-06-13 23:08:14 | INFO | P05-WORKOUTS |   Sending message with key=USR-005
+2026-06-13 23:08:14 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=13
+2026-06-13 23:08:16 | INFO | P05-WORKOUTS | {
+  session_id: SES-0018
+  datetime: 2026-06-05T18:30:00Z
+  user_id: USR-006
+  activity: cycle
+  duration_min: 40
+  distance_km: 14.20
+  avg_hr: 128
+  device_type: watch
+  note: Easy spin
+}
+2026-06-13 23:08:16 | INFO | P05-WORKOUTS |   Sending message with key=USR-006
+2026-06-13 23:08:16 | INFO | P05-WORKOUTS |   MESSAGE SENT  sent=14
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | Checking for rejected records...
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS |   WROTE REJECTED_WORKOUTS_CSV = data/output/producer_rejected_workouts.csv
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | SECTION E. Exit
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | Summary:
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | Sent 14 message(s) to topic 'streaming-05-storage-workouts'.
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | Rejected 4 message(s).
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | Producer executed successfully!
+2026-06-13 23:08:18 | INFO | P05-WORKOUTS | ========================
+2026-06-13 23:10:51 | DEBUG | C05-WORKOUTS | No variables found in .env
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | === RUN START ===
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | project=C05-WORKOUTS
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | repo_dir=streaming-05-storage
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | python=3.14.5
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | os=Linux 6.6.87.2-microsoft-standard-WSL2
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | shell=bash
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | cwd=.
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | github_actions=False
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | ========================
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | START workouts consumer main()
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | ========================
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | ROOT_DIR = .
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | DATA_DIR = data
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | OUTPUT_CSV = data/output/consumed_workouts.csv
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | OUTPUT_DB = data/output/workouts.duckdb
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | USERS_CSV = data/workout_users.csv
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | ========================
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | SECTION A. Acquire
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | ========================
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | Loading settings from .env...
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | KAFKA_BOOTSTRAP_SERVERS  = localhost:9092
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | KAFKA_TOPIC (workouts)   = streaming-05-storage-workouts
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | KAFKA_GROUP_ID           = streaming-consumer-group-A
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | CONSUMER_TIMEOUT_SECONDS = 10.0
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | CONSUMER_MAX_MESSAGES    = 1000
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | Verifying Kafka connection...
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | Kafka port is reachable.
+2026-06-13 23:10:51 | INFO | C05-WORKOUTS | Verifying Kafka topic...
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Topic 'streaming-05-storage-workouts' exists.
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Found 26 message(s) available.
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Creating Kafka consumer...
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Subscribed to topic: 'streaming-05-storage-workouts' (reading from beginning)
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | ========================
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | SECTION C. Consume and Process Messages
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | ========================
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Initializing output...
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Output CSV cleared: consumed_workouts.csv
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Database initialized: workouts.duckdb
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Loading enrichment reference data...
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Found 6 user profiles.
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Consuming messages...
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Waiting for up to 1000 message(s).
+2026-06-13 23:10:52 | INFO | C05-WORKOUTS | Press CTRL+C to stop early.
+
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | {'activity': 'run', 'avg_hr': '162', 'datetime': '2026-06-01T06:15:00Z', 'device_type': 'watch', 'distance_km': '8.10', 'duration_min': '42', 'note': 'Morning tempo run', 'session_id': 'SES-0001', 'user_id': 'USR-001', '_kafka_key': 'USR-001', '_kafka_partition': 0, '_kafka_offset': 0}
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=493.9
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | pace_min_per_km=5.19
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | intensity_pct=84.4
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS |   session=SES-0001
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | session=SES-0001
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=493.9
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | consumed=1
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | total_calories=493.9
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | average=493.9
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | min=493.9
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | max=493.9
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | {'activity': 'cycle', 'avg_hr': '148', 'datetime': '2026-06-01T07:02:00Z', 'device_type': 'watch', 'distance_km': '28.40', 'duration_min': '75', 'note': 'Hill repeats', 'session_id': 'SES-0002', 'user_id': 'USR-002', '_kafka_key': 'USR-002', '_kafka_partition': 0, '_kafka_offset': 1}
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=576.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | pace_min_per_km=2.64
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | intensity_pct=79.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | hr_zone=3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS |   session=SES-0002
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | session=SES-0002
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=576.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | consumed=2
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | total_calories=1,070.5
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | average=535.2
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | min=493.9
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | max=576.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | {'activity': 'walk', 'avg_hr': '98', 'datetime': '2026-06-01T12:30:00Z', 'device_type': 'phone', 'distance_km': '4.90', 'duration_min': '55', 'note': 'Lunch walk', 'session_id': 'SES-0003', 'user_id': 'USR-003', '_kafka_key': 'USR-003', '_kafka_partition': 0, '_kafka_offset': 2}
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=282.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | pace_min_per_km=11.22
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | intensity_pct=56.0
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | hr_zone=1
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS |   session=SES-0003
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | session=SES-0003
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=282.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | consumed=3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | total_calories=1,352.8
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | average=450.9
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | min=282.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | max=576.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | {'activity': 'swim', 'avg_hr': '151', 'datetime': '2026-06-01T18:45:00Z', 'device_type': 'watch', 'distance_km': '1.80', 'duration_min': '40', 'note': 'Pool intervals', 'session_id': 'SES-0004', 'user_id': 'USR-004', '_kafka_key': 'USR-004', '_kafka_partition': 0, '_kafka_offset': 3}
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=293.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | pace_min_per_km=22.22
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | intensity_pct=76.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | hr_zone=3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS |   session=SES-0004
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | session=SES-0004
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=293.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | consumed=4
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | total_calories=1,646.1
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | average=411.5
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | min=282.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | max=576.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | {'activity': 'row', 'avg_hr': '139', 'datetime': '2026-06-02T06:05:00Z', 'device_type': 'watch', 'distance_km': '6.20', 'duration_min': '30', 'note': 'Steady state erg', 'session_id': 'SES-0005', 'user_id': 'USR-005', '_kafka_key': 'USR-005', '_kafka_partition': 0, '_kafka_offset': 4}
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=278.2
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | pace_min_per_km=4.84
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | intensity_pct=76.8
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | hr_zone=3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS |   session=SES-0005
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | session=SES-0005
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=278.2
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | consumed=5
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | total_calories=1,924.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | average=384.9
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | min=278.2
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | max=576.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | {'activity': 'run', 'avg_hr': '171', 'datetime': '2026-06-02T06:40:00Z', 'device_type': 'watch', 'distance_km': '5.30', 'duration_min': '28', 'note': 'Threshold session', 'session_id': 'SES-0006', 'user_id': 'USR-001', '_kafka_key': 'USR-001', '_kafka_partition': 0, '_kafka_offset': 5}
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=329.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | pace_min_per_km=5.28
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | intensity_pct=89.1
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS |   session=SES-0006
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | session=SES-0006
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=329.3
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | consumed=6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | total_calories=2,253.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | average=375.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | min=278.2
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | max=576.6
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | {'activity': 'walk', 'avg_hr': '104', 'datetime': '2026-06-02T19:10:00Z', 'device_type': 'phone', 'distance_km': '5.40', 'duration_min': '65', 'note': 'Evening stroll', 'session_id': 'SES-0007', 'user_id': 'USR-006', '_kafka_key': 'USR-006', '_kafka_partition': 0, '_kafka_offset': 6}
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | calories=257.8
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | pace_min_per_km=12.04
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | intensity_pct=61.5
+2026-06-13 23:10:55 | INFO | C05-WORKOUTS | hr_zone=2
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0007
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0007
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=7
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=2,511.4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=358.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=576.6
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'run', 'avg_hr': '158', 'datetime': '2026-06-03T05:55:00Z', 'device_type': 'watch', 'distance_km': '9.20', 'duration_min': '50', 'note': 'Long easy run', 'session_id': 'SES-0008', 'user_id': 'USR-002', '_kafka_key': 'USR-002', '_kafka_partition': 0, '_kafka_offset': 7}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=502.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=5.43
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=84.9
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0008
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0008
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=502.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=3,013.7
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=376.7
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=576.6
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'cycle', 'avg_hr': '141', 'datetime': '2026-06-03T17:25:00Z', 'device_type': 'watch', 'distance_km': '34.10', 'duration_min': '90', 'note': 'Weekend ride', 'session_id': 'SES-0009', 'user_id': 'USR-003', '_kafka_key': 'USR-003', '_kafka_partition': 0, '_kafka_offset': 8}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=2.64
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=80.6
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0009
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0009
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=9
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=4,003.7
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=444.9
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'run', 'avg_hr': '178', 'datetime': '2026-06-03T20:00:00Z', 'device_type': 'watch', 'distance_km': '7.00', 'duration_min': '35', 'note': 'Track 400s', 'session_id': 'SES-0010', 'user_id': 'USR-004', '_kafka_key': 'USR-004', '_kafka_partition': 0, '_kafka_offset': 9}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=314.4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=5.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=89.9
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0010
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0010
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=314.4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=10
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=4,318.1
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=431.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'swim', 'avg_hr': '146', 'datetime': '2026-06-04T06:20:00Z', 'device_type': 'watch', 'distance_km': '2.20', 'duration_min': '45', 'note': 'Open water sim', 'session_id': 'SES-0011', 'user_id': 'USR-005', '_kafka_key': 'USR-005', '_kafka_partition': 0, '_kafka_offset': 10}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=477.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=20.45
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=80.7
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0011
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0011
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=477.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=11
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=4,795.1
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=435.9
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'cycle', 'avg_hr': '150', 'datetime': '2026-06-04T07:15:00Z', 'device_type': 'watch', 'distance_km': '24.80', 'duration_min': '60', 'note': 'Commute ride', 'session_id': 'SES-0012', 'user_id': 'USR-001', '_kafka_key': 'USR-001', '_kafka_partition': 0, '_kafka_offset': 11}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=540.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=2.42
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=78.1
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0012
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0012
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=540.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=12
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=5,335.1
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=444.6
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'run', 'avg_hr': '162', 'datetime': '2026-06-01T06:15:00Z', 'device_type': 'watch', 'distance_km': '8.10', 'duration_min': '42', 'note': 'Morning tempo run', 'session_id': 'SES-0001', 'user_id': 'USR-001', '_kafka_key': 'USR-001', '_kafka_partition': 0, '_kafka_offset': 12}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=493.9
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=5.19
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=84.4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0001
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0001
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=493.9
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=13
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=5,829.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=448.4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'cycle', 'avg_hr': '148', 'datetime': '2026-06-01T07:02:00Z', 'device_type': 'watch', 'distance_km': '28.40', 'duration_min': '75', 'note': 'Hill repeats', 'session_id': 'SES-0002', 'user_id': 'USR-002', '_kafka_key': 'USR-002', '_kafka_partition': 0, '_kafka_offset': 13}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=576.6
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=2.64
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=79.6
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0002
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0002
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=576.6
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=14
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=6,405.6
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=457.5
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'walk', 'avg_hr': '98', 'datetime': '2026-06-01T12:30:00Z', 'device_type': 'phone', 'distance_km': '4.90', 'duration_min': '55', 'note': 'Lunch walk', 'session_id': 'SES-0003', 'user_id': 'USR-003', '_kafka_key': 'USR-003', '_kafka_partition': 0, '_kafka_offset': 14}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=282.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=11.22
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=56.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=1
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0003
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0003
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=282.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=15
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=6,687.9
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=445.9
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'swim', 'avg_hr': '151', 'datetime': '2026-06-01T18:45:00Z', 'device_type': 'watch', 'distance_km': '1.80', 'duration_min': '40', 'note': 'Pool intervals', 'session_id': 'SES-0004', 'user_id': 'USR-004', '_kafka_key': 'USR-004', '_kafka_partition': 0, '_kafka_offset': 15}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=293.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=22.22
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=76.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0004
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0004
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=293.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=16
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=6,981.2
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=436.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'row', 'avg_hr': '139', 'datetime': '2026-06-02T06:05:00Z', 'device_type': 'watch', 'distance_km': '6.20', 'duration_min': '30', 'note': 'Steady state erg', 'session_id': 'SES-0005', 'user_id': 'USR-005', '_kafka_key': 'USR-005', '_kafka_partition': 0, '_kafka_offset': 16}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=278.2
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=4.84
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=76.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0005
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0005
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=278.2
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=17
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=7,259.4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=427.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'run', 'avg_hr': '171', 'datetime': '2026-06-02T06:40:00Z', 'device_type': 'watch', 'distance_km': '5.30', 'duration_min': '28', 'note': 'Threshold session', 'session_id': 'SES-0006', 'user_id': 'USR-001', '_kafka_key': 'USR-001', '_kafka_partition': 0, '_kafka_offset': 17}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=329.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=5.28
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=89.1
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS |   session=SES-0006
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | session=SES-0006
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=329.3
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | consumed=18
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | total_calories=7,588.7
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | average=421.6
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | {'activity': 'walk', 'avg_hr': '104', 'datetime': '2026-06-02T19:10:00Z', 'device_type': 'phone', 'distance_km': '5.40', 'duration_min': '65', 'note': 'Evening stroll', 'session_id': 'SES-0007', 'user_id': 'USR-006', '_kafka_key': 'USR-006', '_kafka_partition': 0, '_kafka_offset': 18}
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | calories=257.8
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | pace_min_per_km=12.04
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | intensity_pct=61.5
+2026-06-13 23:10:56 | INFO | C05-WORKOUTS | hr_zone=2
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS |   session=SES-0007
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | session=SES-0007
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=257.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | consumed=19
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | total_calories=7,846.5
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | average=413.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | {'activity': 'run', 'avg_hr': '158', 'datetime': '2026-06-03T05:55:00Z', 'device_type': 'watch', 'distance_km': '9.20', 'duration_min': '50', 'note': 'Long easy run', 'session_id': 'SES-0008', 'user_id': 'USR-002', '_kafka_key': 'USR-002', '_kafka_partition': 0, '_kafka_offset': 19}
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=502.3
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | pace_min_per_km=5.43
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | intensity_pct=84.9
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS |   session=SES-0008
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | session=SES-0008
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=502.3
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | consumed=20
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | total_calories=8,348.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | average=417.4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | {'activity': 'cycle', 'avg_hr': '141', 'datetime': '2026-06-03T17:25:00Z', 'device_type': 'watch', 'distance_km': '34.10', 'duration_min': '90', 'note': 'Weekend ride', 'session_id': 'SES-0009', 'user_id': 'USR-003', '_kafka_key': 'USR-003', '_kafka_partition': 0, '_kafka_offset': 20}
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=990.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | pace_min_per_km=2.64
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | intensity_pct=80.6
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS |   session=SES-0009
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | session=SES-0009
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=990.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | consumed=21
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | total_calories=9,338.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | average=444.7
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | {'activity': 'run', 'avg_hr': '178', 'datetime': '2026-06-03T20:00:00Z', 'device_type': 'watch', 'distance_km': '7.00', 'duration_min': '35', 'note': 'Track 400s', 'session_id': 'SES-0010', 'user_id': 'USR-004', '_kafka_key': 'USR-004', '_kafka_partition': 0, '_kafka_offset': 21}
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=314.4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | pace_min_per_km=5.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | intensity_pct=89.9
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS |   session=SES-0010
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | session=SES-0010
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=314.4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | consumed=22
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | total_calories=9,653.2
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | average=438.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | {'activity': 'swim', 'avg_hr': '146', 'datetime': '2026-06-04T06:20:00Z', 'device_type': 'watch', 'distance_km': '2.20', 'duration_min': '45', 'note': 'Open water sim', 'session_id': 'SES-0011', 'user_id': 'USR-005', '_kafka_key': 'USR-005', '_kafka_partition': 0, '_kafka_offset': 22}
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=477.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | pace_min_per_km=20.45
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | intensity_pct=80.7
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS |   session=SES-0011
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | session=SES-0011
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=477.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | consumed=23
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | total_calories=10,130.2
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | average=440.4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | {'activity': 'cycle', 'avg_hr': '150', 'datetime': '2026-06-04T07:15:00Z', 'device_type': 'watch', 'distance_km': '24.80', 'duration_min': '60', 'note': 'Commute ride', 'session_id': 'SES-0012', 'user_id': 'USR-001', '_kafka_key': 'USR-001', '_kafka_partition': 0, '_kafka_offset': 23}
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=540.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | pace_min_per_km=2.42
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | intensity_pct=78.1
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | hr_zone=3
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS |   session=SES-0012
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | session=SES-0012
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=540.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | consumed=24
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | total_calories=10,670.2
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | average=444.6
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | {'activity': 'run', 'avg_hr': '155', 'datetime': '2026-06-05T06:10:00Z', 'device_type': 'watch', 'distance_km': '9.60', 'duration_min': '48', 'note': 'Progression run', 'session_id': 'SES-0017', 'user_id': 'USR-005', '_kafka_key': 'USR-005', '_kafka_partition': 0, '_kafka_offset': 24}
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=623.3
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | pace_min_per_km=5.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | intensity_pct=85.6
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | hr_zone=4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS |   session=SES-0017
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | session=SES-0017
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=623.3
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | consumed=25
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | total_calories=11,293.5
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | average=451.7
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | {'activity': 'cycle', 'avg_hr': '128', 'datetime': '2026-06-05T18:30:00Z', 'device_type': 'watch', 'distance_km': '14.20', 'duration_min': '40', 'note': 'Easy spin', 'session_id': 'SES-0018', 'user_id': 'USR-006', '_kafka_key': 'USR-006', '_kafka_partition': 0, '_kafka_offset': 25}
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=340.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | pace_min_per_km=2.82
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | intensity_pct=75.7
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | hr_zone=3
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | Wrote valid record to DuckDB:
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS |   session=SES-0018
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | MESSAGE ACCEPTED
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | session=SES-0018
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | calories=340.0
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | consumed=26
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | RUNNING STATS (calories)
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | total_calories=11,633.5
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | average=447.4
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | min=257.8
+2026-06-13 23:10:57 | INFO | C05-WORKOUTS | max=990.0
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | No message received within 10.0s timeout.
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | Producer finished or paused. Stopping consumer.
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | Kafka consumer closed.
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | Saving artifacts...
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | WROTE OUTPUT_CSV = data/output/consumed_workouts.csv
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | WROTE OUTPUT_DB = data/output/workouts.duckdb
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | ========================
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | SECTION E. Exit
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | ========================
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | Summary:
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | Consumed 26 message(s) from topic 'streaming-05-storage-workouts'.
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | Skipped  0 message(s).
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | OUTPUT_CSV = data/output/consumed_workouts.csv
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS |   Total calories:  11,633.5
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS |   Average session: 447.4
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS |   Minimum session: 257.8
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS |   Maximum session: 990.0
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE | DuckDB valid row(s): 26
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE | DuckDB rejected row(s): 0
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE | DuckDB workouts by activity:
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   cycle: 7 session(s), 490 min, 4,553.2 kcal, avg intensity 78.9%
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   run: 9 session(s), 358 min, 3,903.1 kcal, avg intensity 86.9%
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   swim: 4 session(s), 170 min, 1,540.6 kcal, avg intensity 78.5%
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   walk: 4 session(s), 240 min, 1,080.2 kcal, avg intensity 58.8%
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   row: 2 session(s), 60 min, 556.4 kcal, avg intensity 76.8%
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE | DuckDB total calories by user:
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   USR-001: 6 session(s), 2,726.4 kcal
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   USR-003: 4 session(s), 2,544.6 kcal
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   USR-002: 4 session(s), 2,157.8 kcal
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   USR-005: 5 session(s), 2,133.7 kcal
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   USR-004: 4 session(s), 1,215.4 kcal
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS-STORAGE |   USR-006: 3 session(s), 855.6 kcal
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | ========================
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | Consumer executed successfully!
+2026-06-13 23:11:08 | INFO | C05-WORKOUTS | ========================
